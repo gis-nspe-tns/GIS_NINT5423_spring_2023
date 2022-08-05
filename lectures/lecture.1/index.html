@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Lecture 1:</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Stephen Metts | Part-Time Associate Professor" />
+    <script src="libs/header-attrs-2.14/header-attrs.js"></script>
+    <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
+    <link href="libs/remark-css-0.0.1/metropolis.css" rel="stylesheet" />
+    <link href="libs/remark-css-0.0.1/metropolis-fonts.css" rel="stylesheet" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+.title[
+# Lecture 1:
+]
+.subtitle[
+## <br/>An introduction to the Geoweb
+]
+.author[
+### Stephen Metts | Part-Time Associate Professor
+]
+.institute[
+### <a href="https://www.newschool.edu/international-affairs/">Graduate School of International Affairs, Management and Urban Policy The New School, NYC</a>
+]
+.date[
+### Spring 2023 | <a href="https://courses.newschool.edu/courses/NINT5423/13169/">NINT 5423</a>
+]
+
+---
+
+background-image: url(img/1_X9aA5ZRLoidiOEoBi7ywTA.png)
+background-size: cover
+class: left ,top
+# The Geoweb
+
+.footnote[[source](https://medium.com/vis-gl/exploring-geospatial-data-with-kepler-gl-cf655839628f)]
+--
+
+- ## .inverse[Part I: Historical Context + Introductory Terminology]
+
+--
+
+- ## .inverse[Part II: Anatomy of a Webmap]
+
+---
+
+background-image: url(img/Comparison-of-GeoWEB-Web-GIS-and-Web-mapping.png)
+background-size: cover
+class: left ,top
+# The Geoweb
+
+
+
+.footnote[[source](https://www.researchgate.net/figure/Comparison-of-GeoWEB-Web-GIS-and-Web-mapping_fig10_276364017/download)]
+
+--
+
+- ## Top of the hierarchy
+
+--
+
+- ## Encompasses multiple disciplines, technologies, sectors
+
+--
+
+- ## Relatively nebulous term that can mean different things to different users and developers
+
+
+
+---
+background-image: url(img/Arpanet_map_1973.png)
+background-size: cover
+class: left ,top
+# The Geoweb - Historical Precedent
+.footnote[[source](https://en.wikipedia.org/wiki/ARPANET#/media/File:Arpanet_map_1973.jpg)]
+
+---
+background-image: url(img/Arpanet_in_the_1970s.png)
+background-size: cover
+class: left ,top
+# The Geoweb - Historical Precedent
+.footnote[[source](https://en.wikipedia.org/wiki/ARPANET#/media/File:Arpanet_in_the_1970s.png)]
+
+---
+
+background-image: url(img/NM.png)
+background-size: cover
+class: left ,top
+# The Geoweb - Historical Precedent
+.footnote[[source](https://en.wikipedia.org/wiki/Neuromancer)]
+
+---
+
+background-size: cover
+class: left ,top
+# The Geoweb - Historical Precedent
+.footnote[[source](https://en.wikipedia.org/wiki/Neuromancer)]
+
+&lt;br&gt;
+
+- ### &lt;i&gt;"The matrix has its roots in primitive arcade games. … **Cyberspace**. A consensual hallucination experienced daily by billions of legitimate operators, in every nation, by children being taught mathematical concepts. … A graphic representation of data abstracted from banks of every computer in the human system. Unthinkable complexity. Lines of light ranged in the nonspace of the mind, clusters and constellations of data. Like city lights, receding."&lt;/i&gt;
+
+---
+
+background-image: url(img/spatialization-internet.png)
+background-size: cover
+class: left ,top
+# The Geoweb - Historical Precedent
+.footnote[[source](https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.37.4604&amp;rep=rep1&amp;type=pdf)]
+
+--
+
+- ### US DoD paper, 1994
+
+--
+
+- ### "Spatialization of the Internet"
+
+--
+
+- ### "Synthetic Environments &amp; Large Distributed Simulations"
+
+--
+
+- ### "Scalability in the Communications Architecture"
+
+
+
+
+---
+
+background-size: cover
+class: left ,top
+# The Geoweb - Historical Precedent
+
+### Advent of WWW + HTML positioned relative to present + ARPANET
+&lt;br&gt;
+&lt;br&gt;
+
+.center[&lt;img src="img/History-of-Internet.png" width= 80%/&gt;]
+.footnote[[source](https://gocoding.org/what-is-internet/)]
+
+---
+
+background-size: cover
+class: left ,top
+# Web GIS
+
+### Web [web technology]
+
+### +
+
+### GIS [geographic information systems]
+
+#### &lt;b&gt;Web GIS&lt;/b&gt; originates from a combination of web technology and the Geographical Information System, which is a recognized technology that is mainly composed of data handling tools for storage, recovery, management and analysis of spatial data. 
+
+.right[&lt;img src="img/webgis.png" width= 60%/&gt;]
+.footnote[[source](https://www.gislounge.com/difference-web-gis-internet-gis/)]
+
+---
+
+background-size: cover
+class: left ,top
+# Web GIS - Historical Precedent
+
+- ## Xerox PARC Map Viewer (1993):
+
+.center[&lt;img src="img/xerox_map_view.png" width= 80%/&gt;]
+.footnote[[source](http://digital-archaeology.org/category/web-history/feed/)]
+
+
+
+---
+
+background-size: cover
+class: left ,top
+# Web GIS - Historical Precedent
+
+### Mapquest launched 1996 as first commercial web mapping service:
+
+.center[&lt;img src="img/mapquest.png" width= 50%/&gt;]
+.footnote[[source](http://web.archive.org/web/19971211230909/http://www.mapquest.com/)]
+
+---
+
+background-size: cover
+background-image: url(img/mapquest_map.png)
+class: left, top
+# Web GIS - Historical Precedent
+.footnote[[source](http://web.archive.org/web/19971211230909/http://www.mapquest.com/)]
+--
+
+- ### Click Map
+
+--
+
+- ### Wait for map to respond
+
+--
+
+- ### Entire page including map reloads
+
+--
+
+- ### Mapped is then panned in one direction or another
+
+---
+
+background-size: cover
+class: left, top
+# Web GIS - Part I - Web Technology
+
+### 1999 - Advent of AJAX:
+
+&lt;br&gt;
+
+.center[&lt;img src="img/ajax_text.png" width= 70%/&gt;]
+
+.footnote[[source](https://en.wikipedia.org/wiki/Ajax_(programming)]
+
+---
+
+background-size: cover
+class: left, top
+# Web GIS - Part I - Web Technology
+
+&lt;br&gt;
+
+.center[&lt;img src="img/ajax.gif" width= 80%/&gt;]
+
+.footnote[[source](https://www.w3schools.com/xml/tryit.asp?filename=tryajax_first)]
+
+---
+
+background-size: cover
+class: left, top
+# Web GIS - Part I - Web Technology
+
+.center[&lt;img src="img/ajax_demo.png" width= 90%/&gt;]
+
+.footnote[[source](https://www.w3schools.com/xml/ajax_intro.asp)]
+
+
+---
+background-size: cover
+class: left, top
+# Web GIS - Part I - Web Technology
+## Core Architecture:
+
+
+.center[&lt;img src="img/Typical-Web-GIS-Architecture.png" width= 50%/&gt;]
+
+.footnote[[source](https://www.researchgate.net/figure/Typical-Web-GIS-Architecture_fig1_229020748/download)]
+
+--
+
+- ### Client (a web browser, a desktop application, or a mobile application)
+
+--
+
+- ### GIS Server (identified by a URL) 
+
+--
+
+- ### Communication (Hypertext Transfer Protocol - HTTP/HTTPS)
+
+---
+
+background-image: url(img/desktop.png)
+background-size: cover
+class: left ,top
+# Web GIS - Part II - GIS
+## 'Traditional' desktop GIS:
+
+---
+
+background-size: cover
+class: left, top
+# Web GIS - Part II - GIS
+## Web GIS capabilities vs 'traditional' desktop capabilities:
+
+--
+
+- ### Whereas desktop GIS consumes, manipulates and displays data (geodata), web gis often stores data that is then queried via client.
+
+--
+
+- ### Whereas desktop GIS excels at complex geoprocessing, web gis offers robust interactivity for stored data.
+
+--
+
+- ### Whereas desktop GIS offers static cartographic output (PDF, PNG for example), web gis allows for extensive styling and interaction of data classes.
+
+---
+
+background-size: cover
+class: left, top
+# Web GIS - Milestones
+
+- ## 2003: NASA World Wind Released. An open virtual globe that loads data from distributed resources across the internet.
+
+.right[&lt;img src="img/Worldwind.png" width= 60%/&gt;]
+
+.footnote[[source](https://en.wikipedia.org/wiki/NASA_WorldWind#/media/File:Worldwind.png)]
+
+
+---
+
+background-size: cover
+class: left, top
+# Web GIS - Milestones
+
+- ## 2004: OpenStreetMap, an open source, open content world map founded by Steve Coast.
+
+.right[&lt;img src="img/osm.png" width= 80%/&gt;]
+
+.footnote[[source](https://www.openstreetmap.org/#map=19/48.85273/2.35076)]
+
+---
+
+background-size: cover
+class: left, top
+# Web GIS - Milestones
+
+- ## 2005: Google Maps - The first version. Based on raster tiles organized in a quad tree scheme, data loading done with AJAX.
+
+.right[&lt;img src="img/google-maps-2005.png" width= 60%/&gt;]
+
+.footnote[[source](https://web.archive.org/web/20051231233521/http://maps.google.com/)]
+
+
+---
+
+background-size: cover
+class: left, top
+# Web GIS - Milestones
+
+- ## 2005: Google Earth, first released building on the virtual globe metaphor. The KML (XML based) markup language allows users to integrate their own personal content. 
+
+
+
+.right[&lt;img src="img/g_earth.png" width= 50%/&gt;]
+
+.footnote[[source](https://www.researchgate.net/figure/Google-Earth-display-of-the-maximum-composite-of-CRWs-50-km-satellite-Coral-Bleaching_fig3_238399502/download)]
+
+---
+
+background-size: cover
+class: left, top
+# Web GIS - Milestones
+
+- ## 2010: MapBox is founded - large provider of custom online maps. Active in MBTiles specification, the TileMill cartography IDE, the Leaflet JavaScript library, and the CartoCSS map styling language and parser.
+
+.right[&lt;img src="img/mapbox.png" width= 80%/&gt;]
+
+.footnote[[source](https://www.mapbox.com/)]
+
+---
+
+background-size: cover
+class: left, top
+# Web GIS - Milestones
+
+- ## 2011: CARTO (formerly CartoDB) is a Software as a Service (SaaS) cloud computing platform that provides GIS and web mapping tools for display in a web browser.
+
+.right[&lt;img src="img/carto.png" width= 50%/&gt;]
+
+.footnote[[source](https://carto.com/)]
+
+---
+
+background-size: cover
+class: left, top
+# Web GIS - Milestones
+
+- ## 2011: Leaflet, the initial release, an open-source JavaScript library for interactive maps.
+
+&lt;br&gt;
+
+.right[&lt;img src="img/leaflet.png" width= 90%/&gt;]
+
+.footnote[[source](https://leafletjs.com/)]
+
+---
+
+background-size: cover
+class: left, top
+# Web Mapping
+
+--
+
+- ### "The advent of **web mapping** can be regarded as a major new trend in cartography. Until recently cartography was restricted to a few companies, institutes and mapping agencies, requiring relatively expensive and complex hardware and software as well as skilled cartographers and geomatics engineers."
+
+--
+
+- ### "A **web map** or an **online map** is both served and consumed, thus web mapping is more than just web cartography, it is a service by which consumers may choose what the map will show."
+
+
+
+.footnote[[source](https://en.wikipedia.org/wiki/Web_mapping)]
+
+---
+
+background-image: url(img/web-map-anatomy-0.jpg)
+background-size: cover
+class: left ,top
+# Web Mapping - Anatomy of a Web Map
+
+.footnote[[source](https://gpia-gis.github.io/adv-materials-spring2021/)]
+
+---
+
+background-image: url(img/web-map-anatomy-1.jpg)
+background-size: cover
+class: left ,top
+# Web Mapping - Anatomy of a Web Map
+
+.footnote[[source](https://gpia-gis.github.io/adv-materials-spring2021/)]
+
+---
+
+background-image: url(img/web-map-anatomy-2.jpg)
+background-size: cover
+class: left ,top
+# Web Mapping - Anatomy of a Web Map
+
+.footnote[[source](https://gpia-gis.github.io/adv-materials-spring2021/)]
+
+---
+
+background-image: url(img/web-map-anatomy-3.jpg)
+background-size: cover
+class: left ,top
+# Web Mapping - Anatomy of a Web Map
+
+.footnote[[source](https://gpia-gis.github.io/adv-materials-spring2021/)]
+
+
+---
+
+
+background-image: url(img/web-map-anatomy-4.jpg)
+background-size: cover
+class: left ,top
+# Web Mapping - Anatomy of a Web Map
+
+.footnote[[source](https://gpia-gis.github.io/adv-materials-spring2021/)]
+
+---
+
+background-image: url(img/openwhatevermap.png)
+background-size: cover
+class: left ,top
+# Web Mapping - Base Maps
+
+--
+
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+- ## .inverse[A basemap is a reference map on which users can overlay multiple layers of spatial or geographic data upon, such as vector or raster data.]
+
+
+.footnote[[source](http://openwhatevermap.xyz/#3/54.88/-16.44)]
+
+---
+
+background-image: url(img/carto_tiles.gif)
+background-size: cover
+class: left ,top
+# Web Mapping - Base Maps
+
+.footnote[[source](https://carto.com/)]
+
+---
+
+background-image: url(img/Tiled_web_map_Stevage.png)
+background-size: cover
+class: left ,top
+# Web Mapping - Base Maps
+
+.footnote[[source](https://en.wikipedia.org/wiki/Tiled_web_map#/media/File:Tiled_web_map_Stevage.png)]
+--
+
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+- ### .inverse[An exaggeration of a tiled web map, in this case the default OpenStreetMap style near Melbourne, Australia. Tiled web maps are normally displayed with no gap between tiles.]
+
+---
+
+background-image: url(img/zoom-tiles.png)
+background-size: cover
+class: left ,top
+# Web Mapping - Base Maps
+
+.footnote[[source](https://forge.autodesk.com/blog/add-mapbox-google-maps-forge-viewer)]
+
+---
+
+background-image: url(img/pyramid-tiles.png)
+background-size: cover
+class: left ,top
+# Web Mapping - Base Maps
+
+.footnote[[source](https://www.researchgate.net/figure/Tile-pyramid-representation_fig1_258725283)]
+
+---
+
+
+background-size: cover
+class: left, top
+# Web Mapping - Map Projections
+
+&lt;br&gt;
+.center[&lt;img src="img/mercator.png" width= 100%/&gt;]
+
+.footnote[[source](https://www.maptiler.com/google-maps-coordinates-tile-bounds-projection/#14/-16.85/55.17)]
+
+---
+
+
+background-size: cover
+class: left, top
+# Web Mapping - Map Projections
+
+&lt;br&gt;
+.center[&lt;img src="img/4326.png" width= 100%/&gt;]
+
+.footnote[[source](https://www.maptiler.com/google-maps-coordinates-tile-bounds-projection/#14/-16.85/55.17)]
+
+---
+
+background-size: cover
+class: left, top
+# Web Mapping - Data (Geodata)
+
+&lt;br&gt;
+.center[&lt;img src="img/vector_raster.png" width= 100%/&gt;]
+
+.footnote[[source](https://www.maptiler.com/news/2019/02/what-are-vector-tiles-and-why-you-should-care/)]
+
+---
+
+background-size: cover
+class: left, top
+# Web Mapping - Data (Geodata)
+
+
+.center[&lt;img src="img/geojson_1.png" width= 75%/&gt;]
+
+.footnote[[source](https://en.wikipedia.org/wiki/GeoJSON)]
+
+---
+
+background-size: cover
+class: left, top
+# Web Mapping - Data (Geodata)
+
+&lt;br&gt;
+&lt;br&gt;
+.center[&lt;img src="img/geojson_2.png" width= 100%/&gt;]
+
+.footnote[[source](https://geojson.io/#map=4/7.49/25.27)]
+
+---
+background-image: url(img/carto_data.png)
+background-size: cover
+class: left, top
+# Web Mapping - Data (Geodata)
+
+
+.footnote[[source](https://thenewschool.carto.com/)]
+
+--
+
+- ### .inverse[CARTO is an open source software built on PostGIS and PostgreSQL.]
+
+--
+
+- ### .inverse[PostGIS is a spatial database extender for PostgreSQL object-relational database. It adds support for geographic objects allowing location queries to be run in SQL.]
+
+--
+
+
+
+
+
+---
+class: left ,top, inverse
+# Lecture 1 End
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
