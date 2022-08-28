@@ -1,0 +1,50 @@
+ 
+/* Basic Syntax*/
+#selector {
+    property: value;
+}
+
+
+/* Zoom Conditional Statement */
+[zoom >= 5] {
+    marker-width: 40;
+    marker-fill: red;
+    marker-fill-opacity: 1.0;
+}
+
+
+
+/* Zoom Conditional Statement Example #1 */
+#layer {
+    marker-width: 40;
+    marker-fill: black;
+    marker-fill-opacity: 1.0;
+    [zoom >= 5] {
+        marker-width: 40;
+        marker-fill: red;
+        marker-fill-opacity: 1.0;
+   }
+}
+
+
+
+/* Zoom Conditional Statement Example #2 */
+#layer [zoom > 4]{
+    marker-width: 40;
+    marker-fill: black;
+    marker-fill-opacity: 1.0;
+}
+
+
+/* Attribute-Dependent Conditional Statement*/
+#layer [name = '...']{
+    marker-width: 40;
+    marker-fill: black;
+    marker-fill-opacity: 1.0;
+}
+
+
+/* TurboCarto Classification Example*/
+#layer {
+    marker-fill: ramp([column_name], cartocolor(Bold), category(4));
+}
