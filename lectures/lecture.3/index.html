@@ -1,0 +1,1018 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Lecture 3:</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Stephen Metts | Part-Time Associate Professor" />
+    <script src="libs/header-attrs-2.14/header-attrs.js"></script>
+    <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
+    <link href="libs/remark-css-0.0.1/metropolis.css" rel="stylesheet" />
+    <link href="libs/remark-css-0.0.1/metropolis-fonts.css" rel="stylesheet" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+.title[
+# Lecture 3:
+]
+.subtitle[
+## <br/>CARTO Spatial Analyses &amp; Structured Query Language (SQL)
+]
+.author[
+### Stephen Metts | Part-Time Associate Professor
+]
+.institute[
+### <a href="https://www.newschool.edu/international-affairs/">Graduate School of International Affairs, Management and Urban Policy The New School, NYC</a>
+]
+.date[
+### Spring 2023 | <a href="https://courses.newschool.edu/courses/NINT5423/13169/">NINT 5423</a>
+]
+
+---
+
+
+
+background-size: cover
+class: left ,top
+# GIS Spatial Analyses Overview
+
+.footnote[[source](https://en.wikipedia.org/wiki/Spatial_analysis)]
+
+--
+
+- ## [Spatial analysis] includes any of the formal techniques which studies entities using their topological, geometric, or geographic properties.
+
+--
+
+- ## Note emphasis on *topological, geometric, or geographic properties*, i.e. the 'geometry' of the dataset[s], not necessarily the 'attributes' of the dataset[s].
+
+---
+
+background-size: cover
+class: left ,top
+# GIS Spatial Analyses Overview
+
+- ### In a Desktop GIS [QGIS], the core spatial analyses tools are easily accessible at `selection toolbar&gt; Select by Location` and `main menu &gt; Vector &gt; Geoprocessing Tools`:
+
+&lt;br&gt;
+
+.center[&lt;img src="img/qgis-analysis-2.png" width= 60%/&gt;]
+
+---
+
+background-size: cover
+class: left ,top
+# GIS Spatial Analyses Overview
+
+- ### In a Desktop GIS [QGIS], the core spatial analyses tools are easily accessible at `selection toolbar&gt; Select by Location` and `main menu &gt; Vector &gt; Geoprocessing Tools`:
+
+&lt;br&gt;
+
+.center[&lt;img src="img/qgis-analysis-1.png" width= 70%/&gt;]
+
+---
+
+background-image: url(img/desktop2.png)
+background-size: cover
+class: left ,top
+# GIS Spatial Analyses Overview
+
+.footnote[[source](https://carto.com/)]
+
+- ## A collection of the spatial analyses tools found in desktop GIS have a corollary in CARTO:
+
+.center[&lt;img src="img/analysis.carto.gif" width= 80%/&gt;]
+
+
+---
+
+background-size: cover
+class: left ,top
+# GIS Spatial Analyses Overview
+
+.footnote[[source](https://carto.com/)]
+
+- ## Utilizing `SQL`, values within column `main_use` are returned:
+
+
+```css
+SELECT DISTINCT main_use FROM dams
+```
+
+
+&lt;style type="text/css"&gt;
+SELECT DISTINCT main_use FROM dams
+&lt;/style&gt;
+
+.center[&lt;img src="img/sql_distinct.png" width= 50%/&gt;]
+
+---
+
+background-size: cover
+class: left ,top
+# GIS Spatial Analyses Overview
+
+.footnote[[source](https://carto.com/)]
+
+- ## Utilizing CARTO `Filter by Column Name` analysis on the global dams dataset, the target column `main_use` is filtered on `Irrigation`:
+
+.center[&lt;img src="img/sql_distinct_selection.gif" width= 60%/&gt;]
+
+---
+
+background-size: cover
+class: left ,top
+# GIS Spatial Analyses Overview
+
+.footnote[[source](https://carto.com/)]
+
+- ## Once enacted, the layer `grand_dams` filter will persist with the layer until the filter is deleted:
+
+&lt;br&gt;
+
+.center[&lt;img src="img/sql_distinct_selection_result.png" width= 90%/&gt;]
+
+---
+
+background-size: cover
+class: left ,top
+# GIS Spatial Analyses Overview
+
+.footnote[[source](https://carto.com/)]
+
+- ## CARTO analyses have a unique behavior wherein multiple analysis can be combined on a singular layer:
+
+.center[&lt;img src="img/combine_1.png" width= 80%/&gt;]
+
+---
+
+background-size: cover
+class: left ,top
+# GIS Spatial Analyses Overview
+
+.footnote[[source](https://carto.com/)]
+
+- ## CARTO analyses have a unique behavior wherein multiple analysis can be combined on a singular layer:
+
+.center[&lt;img src="img/combine_2.png" width= 70%/&gt;]
+
+
+---
+
+background-size: cover
+class: left ,top
+# GIS Query Overview
+
+- ## In addition to spatial analyses (often involving more than one spatial layer), Desktop GIS [QGIS] offers structured queries via `Query Builder`:
+
+.center[&lt;img src="img/query.builder.png" width= 70%/&gt;]
+
+---
+
+background-size: cover
+class: left ,top
+# GIS Query Overview
+
+- ## Note the operators available in desktop `Query Builder`; these operators are built on/for the SQL `WHERE` clause:
+
+&lt;br&gt;
+
+.center[&lt;img src="img/operators.png" width= 80%/&gt;]
+
+---
+
+background-size: cover
+class: left ,top
+# GIS Query Overview
+
+- ## Desktop GIS [QGIS] also offers structured queries via `Select by Expression`:
+
+.center[&lt;img src="img/select-by-expression.png" width= 70%/&gt;]
+
+---
+
+background-size: cover
+class: left ,top
+# GIS Query Overview
+
+- ## Both Desktop and CARTO query capabilities are build on SQL-like statement structures.
+
+--
+
+  - ### This allows for **'pulling'** data out of a dataset [data table] and/or database...
+
+--
+
+  - ### ...**'changing'** the data in a dataset/database...
+  
+--
+
+  - ### ...and **'adding'** to the data in a dataset/database...
+  
+---
+
+background-size: cover
+class: left ,top
+# SQL - Structured Query Language
+
+.footnote[[source](https://slideplayer.com/slide/8689807/)]
+
+- ## Historical Development shorthand:
+
+&lt;br&gt;
+
+.center[&lt;img src="img/sql-history.png" width= 80%/&gt;]
+
+
+---
+
+background-size: cover
+class: left ,top
+# SQL - Structured Query Language
+
+.footnote[[source](https://en.wikipedia.org/wiki/SQL)]
+
+- ## So what is a specific definition of **SQL**?
+
+--
+
+  - ### *SQL (Structured Query Language) is a domain-specific language used in programming and designed for managing data held in a relational database management system (RDBMS), or for stream processing in a relational data stream management system (RDSMS). It is particularly useful in handling structured data, i.e. data incorporating relations among entities and variables.*
+
+---
+background-size: cover
+class: left ,top
+# SQL - Structured Query Language
+
+.footnote[[source](https://www.jetbrains.com/mps/concepts/domain-specific-languages/)]
+
+- ## What is a **domain-specific language**?
+
+--
+
+  - #### *A Domain Specific Language is a programming language with a higher level of abstraction optimized for a specific class of problems. A DSL uses the concepts and rules from the field or domain.*
+  
+--
+
+  - #### *A Domain specific language is usually less complex than a general-purpose language, such as Java, C, or Ruby.*
+
+--
+
+  - #### *In many cases, DSLs are intended to be used not by software people, but instead by non-programmers who are fluent in the domain the DSL addresses.*
+
+--
+
+  - #### *Examples of DSLs include XML, HTML, CSS.  Each one of these languages is used for a relatively narrow [specific] purpose.*
+
+---
+
+background-size: cover
+class: left ,top
+# SQL - Structured Query Language
+
+.footnote[[source](https://www.codecademy.com/article/what-is-rdbms-sql)]
+
+- ## What is a **relational database management system (RDBMS)**?
+
+--
+
+  - #### First, we define a database: *A database is a set of data stored in a computer. This data is usually structured in a way that makes the data easily accessible.*
+  
+--
+
+  - #### Second, the relational database: *A relational database is a type of database. It uses a structure that allows us to identify and access data in relation to another piece of data in the database. Often, data in a relational database is organized into tables.*
+
+--
+
+  - #### Finally the management system: *A relational database management system (RDBMS) is a program that allows you to create, update, and administer a relational database. Importantly, most relational database management systems use the SQL language to access the database.*
+
+--
+
+  - #### *Examples of RDBMS include: MySQL, Oracle DB, SQL Server, SQLite; and importantly for our purposes, PostgreSQL - also known as Postgres.*
+
+---
+
+background-size: cover
+class: left ,top
+# SQL - Structured Query Language
+
+.footnote[[source](https://www.codecademy.com/article/what-is-rdbms-sql)]
+
+- ## Regardless of the **type** of RDBMS, at its core, typically a relational database will be structured in a *tabular* format across its table[s]:
+
+.center[&lt;img src="img/tabular-format.png" width= 65%/&gt;]
+
+---
+
+background-size: cover
+class: left ,top
+# SQL - Syntax
+
+- ## `SELECT`: choose columns from a table. This is a core component of SQL Syntax:
+
+
+```css
+SELECT
+```
+
+
+&lt;style type="text/css"&gt;
+SELECT
+&lt;/style&gt;
+
+---
+
+background-size: cover
+class: left ,top
+# SQL - Syntax
+
+- ## `SELECT *`: addition of an asterisk translates as 'select everything':
+
+
+```css
+SELECT *
+```
+
+
+&lt;style type="text/css"&gt;
+SELECT *
+&lt;/style&gt;
+
+---
+
+background-size: cover
+class: left ,top
+# SQL - Syntax
+
+- ## `FROM [table name]`: we specify from the exact table name:
+
+
+```css
+SELECT *
+FROM dams
+
+```
+
+
+&lt;style type="text/css"&gt;
+SELECT *
+FROM dams
+
+
+&lt;/style&gt;
+
+---
+
+
+background-size: cover
+class: left ,top
+# SQL - Syntax
+
+.footnote[[source](https://carto.com/)]
+
+- ## In CARTO, the [default] query within the SQL interface will look like:
+
+&lt;br&gt;
+
+.center[&lt;img src="img/sql_1.png" width= 80%/&gt;]
+
+---
+
+background-size: cover
+class: left ,top
+# SQL - Syntax
+
+- ## Often the `WHERE` statement is used in conjunction with `SELECT *` . For example, return dams with a `cap_mcm &gt; 600` [CAP_MCM: Representative maximum storage capacity of reservoir in million cubic meters]:
+
+
+```css
+SELECT *
+FROM dams
+WHERE cap_mcm &gt; 600
+
+```
+
+
+&lt;style type="text/css"&gt;
+SELECT *
+FROM dams
+WHERE cap_mcm &gt; 600
+
+
+&lt;/style&gt;
+
+---
+
+background-size: cover
+class: left ,top
+# SQL - Syntax
+
+- #### Just like CartoCSS, the `WHERE` conditions are consistent using standard operators:
+
+
+```css
+SELECT *
+FROM [dataset]
+WHERE [variable_name]
+
+&gt;
+&lt;
+=
+!=
+&gt;=
+&lt;=
+AND
+OR
+NOT
+
+```
+
+
+&lt;style type="text/css"&gt;
+SELECT *
+FROM [dataset]
+WHERE [variable_name]
+
+&gt;
+&lt;
+=
+!=
+&gt;=
+&lt;=
+AND
+OR
+NOT
+
+&lt;/style&gt;
+
+--
+
+- #### If the operator is addressing something other than a *number type* - such as *text* - single quotations marks can be used:
+
+
+```css
+SELECT *
+FROM [dataset]
+WHERE [variable_name] = 'test'
+```
+
+
+&lt;style type="text/css"&gt;
+SELECT *
+FROM [dataset]
+WHERE [variable_name] = 'test'
+&lt;/style&gt;
+
+---
+
+background-size: cover
+class: left ,top
+# SQL - Syntax
+
+.footnote[[source](https://carto.com/)]
+
+- ## In CARTO, the following statement will return just the one feature named `Chin Dam`:
+
+
+```css
+
+SELECT * FROM dams
+WHERE dam_name = 'Chin Dam'
+
+```
+
+
+&lt;style type="text/css"&gt;
+
+SELECT * FROM dams
+WHERE dam_name = 'Chin Dam'
+
+&lt;/style&gt;
+
+.center[&lt;img src="img/sql_2.png" width= 80%/&gt;]
+
+---
+
+background-size: cover
+class: left ,top
+# SQL - Syntax
+
+- ## For multiple, or combined conditions, both `AND` and `OR` can be used; to negate a condition `NOT` can be used:
+
+
+```css
+SELECT *
+FROM dams
+WHERE cap_mcm &gt; 600 AND main_use = 'Irrigation'
+
+```
+
+
+&lt;style type="text/css"&gt;
+SELECT *
+FROM dams
+WHERE cap_mcm &gt; 600 AND main_use = 'Irrigation'
+
+
+&lt;/style&gt;
+
+
+```css
+SELECT *
+FROM dams
+WHERE country = 'Australia'
+  OR country = 'New Zealand'
+
+```
+
+
+&lt;style type="text/css"&gt;
+SELECT *
+FROM dams
+WHERE country = 'Australia'
+  OR country = 'New Zealand'
+
+
+&lt;/style&gt;
+
+
+
+```css
+SELECT *
+FROM dams
+WHERE NOT dam_name = 'Chin Dam'
+
+```
+
+
+&lt;style type="text/css"&gt;
+SELECT *
+FROM dams
+WHERE NOT dam_name = 'Chin Dam'
+
+
+&lt;/style&gt;
+
+---
+
+background-size: cover
+class: left ,top
+# SQL - Syntax
+
+- ## Importantly, `SELECT` does not alter the dataset; it only alters the *view* of the dataset.
+
+--
+
+- ## Alternatively, `SELECT` can be used for core [EDA](https://en.wikipedia.org/wiki/Exploratory_data_analysis) that is *non-spatial* in nature:
+
+--
+
+
+```css
+SELECT COUNT(*)
+FROM dams
+
+```
+
+
+&lt;style type="text/css"&gt;
+SELECT COUNT(*)
+FROM dams
+
+
+&lt;/style&gt;
+
+--
+
+.center[&lt;img src="img/sql_4.png" width= 60%/&gt;]
+
+---
+
+background-size: cover
+class: left ,top
+# SQL - Syntax
+
+- ## *non-spatial* [EDA](https://en.wikipedia.org/wiki/Exploratory_data_analysis)  example #2 using `DISTINCT` query:
+
+--
+
+
+```css
+SELECT DISTINCT(main_use)
+FROM dams
+```
+
+
+&lt;style type="text/css"&gt;
+SELECT DISTINCT(main_use)
+FROM dams
+&lt;/style&gt;
+
+--
+
+.center[&lt;img src="img/sql_5.png" width= 60%/&gt;]
+
+---
+
+background-size: cover
+class: left ,top
+# SQL - Syntax
+
+- ## Note that *non-spatial* [EDA](https://en.wikipedia.org/wiki/Exploratory_data_analysis) will result in an *unmappable* instance within CARTO's map view.  The reason for this is core column types needed for spatial operation/display are truncated in such queries:
+
+
+.center[&lt;img src="img/sql_6.png" width= 60%/&gt;]
+
+---
+
+background-size: cover
+class: left ,top
+# SQL Syntax
+
+.footnote[[source](https://carto.com/)]
+
+
+-  ### As noted earlier, SQL offers three core interactions with databases: **'pulling'**, **'changing'** and **'adding'** to the data in a dataset/database...
+
+--
+
+- ### While we've covered **pulling** with the `SELECT` statement, we can **'change'** and **'add'** utilizing the `UPDATE` statement.
+
+--
+
+- ### `UPDATE` can be useful to create a new column in a dataset based on a specific condition; this can then be used for display like a pop-up or a specific map interaction.
+
+---
+
+background-size: cover
+class: left ,top
+# SQL Syntax
+
+.footnote[[source](https://carto.com/)]
+
+
+-  ### An `UPDATE` statement first needs a new column in which to place new values. Creation of a new column can be done through SQL itself, or interactively at CARTO:
+
+&lt;br&gt;
+
+
+.center[&lt;img src="img/sql_7.png" width= 80%/&gt;]
+
+
+---
+
+background-size: cover
+class: left ,top
+# SQL Syntax
+
+
+.footnote[[source](https://carto.com/)]
+
+
+-  ### An `UPDATE` statement example to follow with 2 of the original 5 conditions updated, separated by a `;`:
+
+--
+
+
+```css
+UPDATE dams
+SET display_quality = 'verified'
+WHERE quality = '1: Verified';
+UPDATE dams
+SET display_quality = 'good'
+WHERE quality = '2: Good'
+```
+
+
+&lt;style type="text/css"&gt;
+UPDATE dams
+SET display_quality = 'verified'
+WHERE quality = '1: Verified';
+UPDATE dams
+SET display_quality = 'good'
+WHERE quality = '2: Good'
+&lt;/style&gt;
+
+--
+
+- ### Results can then be previewed via `SELECT DISTINCT` statement:
+
+.center[&lt;img src="img/sql_8.png" width= 50%/&gt;]
+
+---
+background-image: url(img/postgis_1.png)
+background-size: cover
+class: left ,top
+# SQL + PostGIS
+
+--
+
+- ### CARTO is build upon a [PostGIS database architecture](https://en.wikipedia.org/wiki/PostGIS), which in turn is directly tied to [PostgreSQL](https://en.wikipedia.org/wiki/PostgreSQL).  As discussed earlier, PostgreSQL utilizes SQL as a primary *domain-specific language*.
+
+--
+
+- ### In effect, this allows for spatial, GIS, SQL-like queries to be actualized against the dataset[s] loaded to CARTO.
+
+---
+
+background-size: cover
+class: left ,top
+# SQL + PostGIS
+
+.footnote[[source](https://carto.com/)]
+
+
+- ### In CARTO, there is one limitation - also its great advantage - which is part of the PostGIS database structure. When a valid dataset is loaded to CARTO - regardless the initial format - the columns `cartodb_id`, `the_geom` and `the_geom_webmercator` will be added to the dataset; and a final `feature_count` will be calculated.
+
+--
+
+  - #### `the_geom`: field where the geometries (points, lines, or polygons) are stored in the CARTO dataset. The geometries must be in the projection EPSG:4326 (WGS84 - Geodetic coordinate system for World)
+  
+--
+
+  - #### `the_geom_webmercator`: this field stores the geometries in the projection EPSG:3857 (WGS84 Web Mercator (Auxiliary Sphere) - Projected coordinate system for World). This field is used to render the geometries on the map. This field is automatically updated when a geometry in `the_geom` field is added or updated.
+
+---
+
+background-size: cover
+class: left ,top
+# SQL + PostGIS
+
+.footnote[[source](https://carto.com/)]
+
+- ### In CARTO dataset preview, you can typically see `cartodb_id`, `the_geom` and `the_geom_webmercator` added towards the the front of the dataset:
+
+&lt;br&gt;
+
+.center[&lt;img src="img/sql_3.png" width= 90%/&gt;]
+
+---
+
+background-size: cover
+class: left ,top
+# SQL + PostGIS
+
+.footnote[[source](https://postgis.net/)]
+
+- #### PostGIS is open-source, readily available and very well documented.  Its capacities are very robust, i.e. pretty much anything you can do in a desktop GIS has a Corollary in PostGIS. 
+
+--
+
+.center[&lt;img src="img/postgis_2.png" width= 90%/&gt;]
+
+--
+
+- #### To follow, three PostGIS statements to demonstrate its syntax and performance...
+
+---
+
+background-size: cover
+class: left ,top
+# SQL + PostGIS
+
+.footnote[[source](https://postgis.net/)]
+
+- #### The following query selects all of the columns from the table (*) and appends a new column (area) that contains the area of the features in square meters.
+
+--
+
+&gt;Note: this query is valid against polygon geometries; not points or lines as these geometries don't contain area.
+
+--
+
+
+```css
+
+SELECT *, ST_area(the_geom::geography) AS area
+FROM table
+
+```
+
+
+&lt;style type="text/css"&gt;
+
+SELECT *, ST_area(the_geom::geography) AS area
+FROM table
+
+&lt;/style&gt;
+
+--
+
+.center[&lt;img src="img/postgis_3.png" width= 60%/&gt;]
+
+
+---
+
+background-size: cover
+class: left ,top
+# SQL + PostGIS
+
+.footnote[[source](https://postgis.net/)]
+
+- #### The following query selects features within a given bounding box, which would be specified in the italicized parts (minimum longitude, minimum latitude, maximum longitude, maximum latitude). The new functions here are `ST_within`, which checks if one geometry is within another, and `ST_MakeEnvelope`, which makes a rectangle from the given minimums and maximums.
+
+--
+
+
+```css
+
+SELECT *
+FROM table
+WHERE ST_within(the_geom_webmercator, 
+ST_transform(ST_MakeEnvelope(min_lng, min_lat, max_lng, max_lat,4326),3857)
+)
+
+```
+
+
+&lt;style type="text/css"&gt;
+
+SELECT *
+FROM table
+WHERE ST_within(the_geom_webmercator, 
+ST_transform(ST_MakeEnvelope(min_lng, min_lat, max_lng, max_lat,4326),3857)
+)
+
+&lt;/style&gt;
+
+--
+
+.center[&lt;img src="img/postgis_4.png" width= 60%/&gt;]
+
+
+---
+
+background-size: cover
+class: left ,top
+# SQL + PostGIS
+
+.footnote[[source](https://postgis.net/)]
+
+- #### The following query buffers geometries by the specified buffer radius (in the example, 20km) using `ST_buffer()`. Note that after we buffer the geometry we reproject the result into EPSG:3857 (webmercator, the projection webmaps use) and give it the name `the_geom_webmercator`. If we didn’t do this, there would be no column for CARTO to map. 
+
+--
+
+
+```css
+
+SELECT cartodb_id,
+ ST_transform(
+ ST_buffer(the_geom_webmercator, buffer_radius),3857) as the_geom_webmercator
+FROM table
+
+```
+
+
+&lt;style type="text/css"&gt;
+
+SELECT cartodb_id,
+ ST_transform(
+ ST_buffer(the_geom_webmercator, buffer_radius),3857) as the_geom_webmercator
+FROM table
+
+&lt;/style&gt;
+
+--
+
+.center[&lt;img src="img/postgis_5.gif" width= 60%/&gt;]
+
+---
+
+class: left ,top, inverse
+# Lecture 3 End
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
