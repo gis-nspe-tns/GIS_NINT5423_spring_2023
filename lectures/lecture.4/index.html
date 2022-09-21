@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Lecture 4:</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Stephen Metts | Part-Time Associate Professor" />
+    <script src="libs/header-attrs-2.14/header-attrs.js"></script>
+    <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
+    <link href="libs/remark-css-0.0.1/metropolis.css" rel="stylesheet" />
+    <link href="libs/remark-css-0.0.1/metropolis-fonts.css" rel="stylesheet" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+.title[
+# Lecture 4:
+]
+.subtitle[
+## <br/>The HyperText Markup Language (HTML)
+]
+.author[
+### Stephen Metts | Part-Time Associate Professor
+]
+.institute[
+### <a href="https://www.newschool.edu/international-affairs/">Graduate School of International Affairs, Management and Urban Policy The New School, NYC</a>
+]
+.date[
+### Spring 2023 | <a href="https://courses.newschool.edu/courses/NINT5423/13169/">NINT 5423</a>
+]
+
+---
+
+
+background-size: cover
+class: left ,top
+# Definition and Purpose of HTML
+
+.footnote[[source](https://en.wikipedia.org/wiki/HTML)]
+
+--
+
+- ## The HyperText Markup Language or HTML is the standard markup language for documents designed to be displayed in a web browser, aka 'on the web'.
+
+--
+
+- ## It can be assisted by technologies such as Cascading Style Sheets (CSS) and scripting languages such as JavaScript.
+
+---
+
+background-size: cover
+class: left ,top
+# Definition and Purpose of HTML
+
+.footnote[[source](https://www.w3.org/standards/webdesign/htmlcss#:~:text=HTML%20is%20the%20language%20for,the%20click%20of%20a%20button.)]
+
+
+
+- ## HTML is a *Basic Building Block* of a web page.
+
+--
+
+- ## While there are several dimensions of a web page, HTML provides the *page structure*.
+
+--
+
+- ## HTML is utilized to both *publish* and *retrieve*:
+
+  - ### documents
+  - ### data
+  - ### information
+  - ### media
+
+
+---
+background-image: url(img/1-connectivity.png)
+background-size: cover
+class: left ,top
+# Precursors + History of HTML
+
+.footnote[[source](https://www.vox.com/a/internet-maps)]
+
+--
+
+- #### ARPANET was a test of a then-novel technology called packet-switching, which breaks data into small "packets" so they can be transmitted efficiently across the network. The "packets" concept would later become standardized TCP/IP protocols, still used today.
+
+
+
+
+---
+
+background-image: url(img/2-connectivity.png)
+background-size: cover
+class: left ,top
+# Precursors + History of HTML
+
+.footnote[[source](https://www.vox.com/a/internet-maps)]
+
+--
+
+- #### One of the first ARPANET applications was Telnet, which allowed a researcher at one ARPANET site to log into a computer at another site.
+
+
+---
+
+
+background-image: url(img/3-connectivity.png)
+background-size: cover
+class: left ,top
+# Precursors + History of HTML
+
+.footnote[[source](https://www.vox.com/a/internet-maps)]
+
+--
+
+- ####  Email was invented in 1971 by a BBN engineer named Ray Tomlinson, who also invented the use of the "@" symbol in email addresses. The File Transfer Protocol (FTP), which is still used today, allowed ARPANET users to send files to each other.
+
+---
+
+background-image: url(img/5-connectivity.png)
+background-size: cover
+class: left ,top
+# Precursors + History of HTML
+
+.footnote[[source](https://www.vox.com/a/internet-maps)]
+
+--
+
+- #### A new bulletin board system called Usenet was invented in 1980 and caught on quickly. By mid-80s, ARPANET became the 'modern internet' as new networks such as CSNET were connected. Today, the internet features more than 40,000 integrated networks.
+
+---
+
+background-image: url(img/6-connectivity.png)
+background-size: cover
+class: left ,top
+# HTML Precursors + History of Internet
+
+.footnote[[source](https://www.vox.com/a/internet-maps)]
+
+--
+
+- #### .inverse[In 1993, the internet was still dominated by the United States but it was becoming a truly global network. This is a map of information flow on Usenet, one of the early internet networks:]
+
+--
+
+- #### .inverse[In 1994, the Clinton Administration fully privatized the internet backbone.]
+
+
+---
+
+
+background-image: url(img/7-connectivity.png)
+background-size: cover
+class: left ,top
+# Precursors + History of HTML
+
+.footnote[[source](https://www.vox.com/a/internet-maps)]
+
+--
+
+- #### .inverse[Today, the internet is a truly global phenomena with an expansive global infrastructure.]
+
+
+---
+
+background-size: cover
+class: left ,top
+# The World Wide Web
+
+.footnote[[source](https://en.wikipedia.org/wiki/World_Wide_Web)]
+
+--
+
+- #### Simple Definition: The World Wide Web (WWW), commonly known as the Web, is an information system enabling documents and other web resources to be accessed over the Internet.
+
+--
+
+.center[&lt;img src="img/Internet_Key_Layers.png" width= 75%/&gt;]
+
+---
+
+background-size: cover
+class: left ,top
+# The World Wide Web
+
+.footnote[[source](https://en.wikipedia.org/wiki/World_Wide_Web)]
+
+--
+
+- #### The World Wide Web has become the world's dominant software platform. It is the primary tool billions of people worldwide use to interact with the Internet.
+
+--
+
+- #### The Web was originally conceived as a document management system. It was invented by Tim Berners-Lee at CERN in 1989 and opened to the public in 1991.
+
+
+--
+
+.center[&lt;img src="img/TBL.jpeg" width= 75%/&gt;]
+
+---
+
+background-image: url(img/w3_proposal.png)
+background-size: cover
+class: left ,top
+# The World Wide Web
+
+.footnote[[source](https://cds.cern.ch/record/245440/files/p69.pdf)]
+
+---
+
+background-image: url(img/w3_diagram_html.png)
+background-size: cover
+class: left ,top
+# The World Wide Web
+
+.footnote[[source](https://www.w3.org)]
+
+
+- #### The basic idea behind the World-Wide Web is based on a client server application and hypertext documents as illustrated in the figure below. The model is simplified in that it only contains elements that exists within the World-Wide Web concept.
+
+
+---
+
+background-size: cover
+class: left ,top
+# The World Wide Web - Browsers
+
+.footnote[[source](https://arstechnica.com/information-technology/2019/05/before-netscape-forgotten-web-browsers-of-the-early-1990s/)]
+
+- #### A web browser (also referred to as an Internet browser or simply a browser) is application software for accessing the World Wide Web or a local website. When a user requests a web page from a particular website, the web browser retrieves its files from a web server and then *graphically renders the page on the user's screen*.
+
+--
+
+.center[&lt;img src="img/early_browsers.png" width= 60%/&gt;]
+
+---
+
+background-size: cover
+class: left ,top
+# The World Wide Web - Browsers
+
+.footnote[[source](https://medium.com/fulldive/a-brief-history-of-browsers-9e8f453dbf45)]
+
+
+&lt;br&gt;
+
+
+.center[&lt;img src="img/browser.history.png" width= 100%/&gt;]
+
+
+---
+
+background-size: cover
+class: left ,top
+# The World Wide Web - Browsers
+
+.footnote[[source](https://www.w3schools.com/browsers/)]
+
+
+&lt;br&gt;
+
+
+.center[&lt;img src="img/current.browsers.png" width= 100%/&gt;]
+
+---
+
+background-size: cover
+class: left ,top
+# Evolution of HTML Standards
+
+.footnote[[source](https://itwebtutorials.mga.edu/html/chp1/html-tags-and-css-styles.aspx)]
+
+&lt;br&gt;
+&lt;br&gt;
+
+.center[&lt;img src="img/html-history.png" width= 90%/&gt;]
+
+---
+
+background-size: cover
+class: left ,top
+# HTML - DOM - Document Object Model
+
+.footnote[[source](https://en.m.wikipedia.org/wiki/Document_Object_Model)]
+
+
+.center[&lt;img src="img/DOM-model.png" width= 60%/&gt;]
+
+
+---
+
+background-size: cover
+class: left ,top
+# HTML - DOM - Document Object Model
+
+.footnote[[source](https://en.m.wikipedia.org/wiki/Document_Object_Model)]
+
+
+.center[&lt;img src="img/DOM.1.png" width= 90%/&gt;]
+
+---
+
+background-size: cover
+class: left ,top
+# HTML - A Markup Language
+
+.footnote[[source](https://itwebtutorials.mga.edu/html/chp1/html-tags-and-css-styles.aspx)]
+
+#### A Web page originates as a standard text file containing the information to be displayed along with formatting instructions for its presentation on the computer screen. These formatting instructions are written in a special markup language, so-called because it is used to "mark up" the information on the page to describe its arrangement and appearance when rendered in a Web browser.
+
+&gt;Note: HTML is **not** a programming language.  It is a **markup language**.
+
+.center[&lt;img src="img/DOM.2.png" width= 60%/&gt;]
+
+---
+
+background-size: cover
+class: left ,top
+# HTML - Access Web Pages
+
+.footnote[[source](https://itwebtutorials.mga.edu/html/chp1/serving-pages.aspx)]
+
+.center[&lt;img src="img/html.locator.png" width= 30%/&gt;]
+
+--
+
+A **Uniform Resource Identifier (URI)** is used to identify a resource on the Internet. 
+
+--
+
+
+ A **Uniform Resource Locator (URL)** is a special type of URI which represents the network location of a resource such as a Web page.
+
+--
+
+ A **Uniforn Resource Name (URN)** is a URI in a standard format, referring to a resource without specifying its location or whether it exists.
+
+--
+
+ **HTTP is the HyperText Transfer Protocol** used to search out and deliver a web page to the browser.
+
+--
+
+**HTTPS** is HTTP with encryption and verification. 
+
+---
+
+background-size: cover
+class: left ,top
+# HTML Syntax
+
+- Every HTML page starts with a standardized 'outer' format which includes the following:
+
+--
+
+- a `&lt;html&gt;` declaration tag
+
+--
+
+- a `&lt;head&gt;` tag
+
+--
+
+- a `&lt;body&gt;` tag
+
+--
+
+
+```html
+
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+    &lt;head&gt;
+        &lt;meta charset="UTF-8" /&gt;
+        &lt;title&gt;page title goes here&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        *
+        page content goes here
+        *
+    &lt;/body&gt;
+&lt;/html&gt;
+
+```
+
+---
+
+background-size: cover
+class: left ,top
+# HTML Syntax
+
+- Every tag structure within the HTML page follows a 'beginning' + 'closing' sequence as follows:
+
+
+--
+
+
+`&lt;`
+
+
+--
+
+
+`&lt;` + `type of tag`
+
+--
+
+
+`&lt;` + `type of tag` + `&gt;` = 'beginning' element tag
+
+--
+
+
+`&lt;` + `type of tag` + `/`
+
+
+--
+
+
+`&lt;` + `type of tag` + `/` + `&gt;` = 'closing' of element tag
+
+
+--
+
+- Example:
+
+
+```html
+&lt;title&gt;First Web Page&lt;/title&gt;
+```
+
+---
+
+background-size: cover
+class: left ,top
+# HTML Syntax
+
+.footnote[[source](https://validator.w3.org/#validate_by_upload)]
+
+- ### HTML code does need to be formatted correctly so as to be 'valid'.
+--
+
+&lt;br&gt;
+
+.center[&lt;img src="img/validate.png" width= 80%/&gt;]
+
+---
+
+background-size: cover
+class: left ,top
+# HTML Syntax
+
+.footnote[[source](https://codebeautify.org/htmlviewer)]
+
+- ### HTML code can/should follow a hierarchical structure.  To ensure structure is maintained, an online code formatter can be utilized:
+--
+
+&lt;br&gt;
+
+.center[&lt;img src="img/format_1.png" width= 80%/&gt;]
+
+---
+
+background-size: cover
+class: left ,top
+# HTML Syntax
+
+.footnote[[source](https://www.imperva.com/learn/performance/minification/)]
+
+- ### Code - HTML code included - can also be minified to 'compress' and 'optimize' code without changing its behavior:
+--
+
+&lt;br&gt;
+
+.center[&lt;img src="img/format_2.png" width= 80%/&gt;]
+
+
+---
+
+background-size: cover
+class: left ,top
+# HTML Syntax
+
+.footnote[[source](https://itwebtutorials.mga.edu/html/chp1/create-your-first-page.aspx)]
+
+- ### HTML code can be commented, but it should be done sparingly for significant sections of the html document:
+--
+
+&lt;br&gt;
+&lt;br&gt;
+
+
+```html
+&lt;!-- Here is a example of html comment --&gt;
+```
+
+---
+
+background-size: cover
+class: left ,top
+# HTML Syntax
+
+#### HTML code has numerous tags with specific purposes; but a select few show up often:
+
+--
+
+- `&lt;a&gt;` for link
+
+- `&lt;strong&gt;` for bold text with emphasis
+
+- `&lt;body&gt;` main HTML part
+
+- `&lt;div&gt;` it is a division or part of an HTML document
+
+- `&lt;h1&gt;`... for titles
+
+- `&lt;i&gt;` to make an italic text
+
+- `&lt;img&gt;` for images in document
+
+- `&lt;ol&gt;` is an ordered list ; `&lt;ul&gt;` for an unordered list ; `&lt;li&gt;` is a list item in bulleted (ordered list)
+
+- `&lt;p&gt;` for paragraph
+
+- `&lt;span&gt;` to style part of text
+
+---
+
+background-size: cover
+class: left ,top
+# HTML Syntax
+
+#### A complete HTML **element** has to be structured as follows:
+
+--
+
+`&lt;p&gt;` is the opening paragraph tag. 
+
+--
+`&lt;/p&gt;` is the closing paragraph tag.
+
+--
+
+`&lt;p&gt; How do you like my paragraph?&lt;/p&gt;` is a paragraph **element** consisting of:
+
+--
+
+- Opening tag
+- Content 
+- Closing tag
+
+---
+
+background-size: cover
+class: left ,top
+# HTML Syntax
+
+#### HTML tags can also include **attributes**, stuctured as follows: 
+
+--
+
+- An opening tag can contain any number of attributes in the opening tag. 
+
+--
+
+- An attribute has a name and a value and is written `name="value"`. 
+
+--
+
+- Example:
+
+
+`&lt;p class="leading-paragraph&gt;"This is a the leading paragraph.&lt;/p&gt;`
+
+--
+
+the paragraph's class is `leading-paragraph`.
+
+---
+
+background-size: cover
+class: left ,top
+# HTML Syntax
+
+#### There are two main **attributes** commonly added to any tag:
+
+--
+
+- `id` - An unique identifier for the **element**.  Used for styling and scripts.
+
+--
+
+- `class` - The name of the set of **elements** this **element** is part of, used for styling and scripts - similar to `id`. 
+
+--
+
+- Often there are multiple **elements** that share the same `class`. 
+
+--
+
+- An **element** can also be part of multiple classes, separated by spaces.
+
+--
+
+- Example:
+
+`&lt;p class="class-one class-two"&gt;two-class paragraph&lt;/p&gt;.`
+
+---
+
+background-size: cover
+class: left ,top
+# HTML Syntax
+
+#### Unique, yet common, HTML **element** example 1:
+
+
+- `&lt;input type=""/&gt;` = user inputs into an HTML document.
+
+--
+
+- `&lt;input type="text" /&gt;` or `&lt;input type="checkbox" /&gt;` or `&lt;input type="radio" /&gt;`
+
+--
+
+- Example: &lt;input type="text" /&gt;
+
+
+```html
+&lt;input type="text" /&gt;
+```
+
+--
+
+- Example: &lt;input type="checkbox" /&gt;
+
+
+```html
+&lt;input type="checkbox" /&gt;
+```
+
+--
+
+- Example: &lt;input type="radio" /&gt;
+
+
+```html
+&lt;input type="text" /&gt;
+```
+
+---
+
+background-size: cover
+class: left ,top
+# HTML Syntax
+
+#### Unique, yet common, HTML **element** example 2:
+
+
+- `&lt;a href&gt;` = a link within an HTML document.
+
+--
+
+- `&lt;a href="http://example.com/awesome/page"&gt;This should be a link&lt;/a&gt;`
+
+--
+
+- Example:
+
+&lt;a href="https://www.google.com/"&gt;Link to Google&lt;/a&gt;
+
+
+```html
+&lt;a href="https://www.google.com/"&gt;Link to Google&lt;/a&gt;
+```
+
+---
+
+background-size: cover
+class: left ,top
+# HTML Syntax
+
+#### Unique, yet common, HTML **element** example 3:
+
+
+- `&lt;img&gt;` = image 'linked' to HTML document.
+
+--
+
+- `&lt;img src="url" alt="alternatetext"&gt;`
+
+--
+
+- Example:
+
+&lt;img src="https://www.w3schools.com/images/w3schools_green.jpg" alt="W3Schools.com"&gt;
+
+
+```html
+&lt;img src="https://www.w3schools.com/images/w3schools_green.jpg" alt="W3Schools.com"&gt;
+```
+
+---
+
+background-size: cover
+class: left ,top
+# HTML Syntax
+
+#### Unique, yet common, HTML **element** example 4:
+
+
+- `&lt;iframe&gt;` = multi-media 'embeded' to  HTML document.
+
+--
+
+- `&lt;iframe src="" title=""&gt;&lt;/iframe&gt;`
+
+--
+
+- Example:
+
+&lt;iframe width="20%" src="https://www.youtube.com/embed/xbs7FT7dXYc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+
+
+```html
+&lt;iframe width="20%" src="https://www.youtube.com/embed/xbs7FT7dXYc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+```
+
+---
+
+class: left ,top, inverse
+# Lecture 4 End
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

@@ -1,0 +1,350 @@
+---
+title: "Lecture 2: "
+subtitle: "<br/>CartoCSS: a [Legacy] Language for Map Design. "
+author: "Stephen Metts | Part-Time Associate Professor "
+institute: "[Graduate School of International Affairs, Management and Urban Policy The New School, NYC](https://www.newschool.edu/international-affairs/)"
+date: "Spring 2023 | [NINT 5423](https://courses.newschool.edu/courses/NINT5423/13169/) "
+class: inverse
+output:
+  xaringan::moon_reader:
+    css: [default, metropolis, metropolis-fonts ]
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+
+background-size: cover
+class: left ,top
+# CartoCSS: Introduction
+
+<br>
+<br>
+
+- ## Cartographic design or map design is the process of crafting the appearance of a map, applying the principles of design and knowledge of how maps are used to create a map that has both **aesthetic appeal** and **practical function**.
+
+.footnote[[source](https://en.wikipedia.org/wiki/Cartographic_design#:~:text=Cartographic%20design%20or%20map%20design,aesthetic%20appeal%20and%20practical%20function.)]
+
+---
+
+background-image: url(img/desktop1.png)
+background-size: cover
+class: left ,top
+# CartoCSS: Introduction
+
+- ### In a Desktop GIS, vector features have a series of symbolization options available at the feature layer level; the most primitive being the *single symbol* option:
+
+---
+
+background-image: url(img/desktop2.png)
+background-size: cover
+class: left ,top
+# CartoCSS: Introduction
+
+- ### In a Desktop GIS, vector features have a series of symbolization options available at the feature layer level; the most primitive being the *single symbol* option:
+
+---
+
+background-image: url(img/desktop3.png)
+background-size: cover
+class: left ,top
+# CartoCSS: Introduction
+
+- ### In a Desktop GIS, vector features - points, lines and polygons - can also be symbolized through classification methods, both qualitative and quantitative:
+
+---
+
+background-image: url(img/desktop4.png)
+background-size: cover
+class: left ,top
+# CartoCSS: Introduction
+
+- ### In a Desktop GIS, vector features - points, lines and polygons - can also be symbolized through classification methods, both qualitative and quantitative:
+
+
+---
+
+background-size: cover
+class: left ,top
+# CartoCSS: Introduction
+
+- ### Web mapping [interactive mapping] inherits many of the conventions found in Desktop GIS map design, but add an *interactive* dimension beyond *static* design.  Typically, map features are manipulated via a series of *properties*: 
+
+
+.center[<img src="img/carto-styling.png" width= 80%/>]
+.footnote[[source](https://carto.com/developers/styling/cartocss/#markers)]
+
+---
+
+background-image: url(img/whatevermap1.png)
+background-size: cover
+class: left ,top
+# CartoCSS: Introduction
+
+.footnote[[source](https://openwhatevermap.xyz/#4/35.92/-49.00)]
+--
+
+<br>
+
+- ## .inverse[The programmatic ability to design map features for an *interactive* context has resulted in an expanding multiplicity of *basemaps* - often open-source - as well as *map design interfaces* like ArcGIS Online (AGOL), Mapbox Studio and CARTO Builder that allow developers to quickly *style* map features atop basemaps.]
+
+---
+
+background-image: url(img/whatevermap1.png)
+background-size: cover
+class: left ,top
+# CartoCSS: Introduction
+
+.footnote[[source](https://openwhatevermap.xyz/#4/35.92/-49.00)]
+
+<br>
+
+- ## .inverse[In effect, developers have control over both the creation and manipulation of basemaps as well as vector map features beyond the confines of static map design.]
+
+---
+
+
+background-size: cover
+class: left ,top
+# CartoCSS: Why?
+
+- ### To build basemaps and symbolize map features, instructions must be created to tell the map renderer how to render the map and it features.
+
+--
+
+- ### Over time, the process has moved away from a 'CSS' based approach to a 'JSON' approach optimized for JavaScript.
+
+--
+
+- ### However, understanding the 'legacy' CSS-based approach is a relatively easy way to get familiar with a programming syntax and interactive principles that will be useful throughout the course.
+
+
+
+---
+
+background-size: cover
+class: left ,top
+# CartoCSS: What?
+
+.footnote[[source](https://css-tricks.com/css-basics-second-s-css/)]
+
+--
+
+- ### While CartoCSS is *not* strictly CSS, it utilizes a similar syntax.  So first, what exactly is CSS?
+
+--
+
+.center[<img src="img/sheet-cascade.png" width= 80%/>]
+
+
+---
+
+background-image: url(img/cartocss_definition_1.png)
+background-size: cover
+class: left ,top
+# CartoCSS: What?
+
+.footnote[[source](https://github.com/mapbox/mapbox-studio-classic/blob/mb-pages/docs/studio-classic-manual/04-classic-manual-cartocss.md)]
+
+--
+
+- #### CartoCSS is a language for map design. It is similar in syntax to CSS, but builds upon it with specific abilities to *filter map data* and by providing things like *variables*.
+
+--
+
+- #### Each CartoCSS map category has its own configurable properties. You can apply multiple symbolizers and properties to the same map layer.
+
+---
+background-image: url(img/mapbox-studio-classic.png)
+background-size: cover
+class: left ,top
+# CartoCSS: History
+.footnote[[source](https://blog.mapbox.com/introducing-mapbox-studio-classic-fdf14453fff2)]
+
+--
+
+- ### .inverse[Develoment of CartoCSS begins circa 2010 at Mapbox, which itself was founded 2010.]
+
+--
+
+- ### .inverse[Mapbox Studio Classic was a desktop application for designing classic styles that allowed you to create maps by using vector tiles and CartoCSS.]
+
+--
+
+- ### .inverse[Mapbox Studio Classic was launched in Fall 2014, now deprecated, replaced by Mapbox Studio.]
+
+
+---
+
+background-image: url(img/osm_carto.png)
+background-size: cover
+class: left ,top
+# CartoCSS: Uses
+.footnote[[source](https://www.openstreetmap.org/node/1242998122)]
+
+--
+- ### OpenStreetMap Carto is the style used for the Standard tile layer of OpenStreetMap [written in CartoCSS].
+
+--
+
+- ### The tile layer OSM Bright is a version of OpenStreetMap, also written in CartoCSS.
+
+---
+
+background-size: cover
+class: left ,top
+# CartoCSS: Uses
+
+
+.footnote[[source](https://carto.com/)]
+
+--
+- ### The CARTO Builder version that is utilized by The New School CARTO account utilizes CartoCSS to render a map's dataset layers.
+
+--
+
+.right[<img src="img/cartocss.gif1.gif" width= 50%/>]
+
+
+
+
+---
+
+background-size: cover
+class: left ,top
+# CartoCSS: Syntax
+
+
+- ### At its core, CartoCSS syntax abides by the following structure, known as a **statement**:
+
+```{css}
+
+#selector 
+
+```
+
+- ### First, the **selector** is the feature to which properties will be given.
+
+---
+
+background-size: cover
+class: left ,top
+# CartoCSS: Syntax
+
+
+- ### At its core, CartoCSS syntax abides by the following structure, known as a **statement**:
+
+```{css}
+
+#selector {
+
+}
+
+```
+
+- ### Second, one set of curly brackets *contain* all the properties that will be given to the feature.
+
+---
+
+background-size: cover
+class: left ,top
+# CartoCSS: Syntax
+
+
+- ### At its core, CartoCSS syntax abides by the following structure, known as a **statement**:
+
+```{css}
+
+#selector {
+  property: 
+}
+
+```
+
+- ### Third, *inside* the curly brackets one or more properties are declared, first with syntax `property`, immediately followed by a colon `:`
+
+---
+
+background-size: cover
+class: left ,top
+# CartoCSS: Syntax
+
+
+- ### At its core, CartoCSS syntax abides by the following structure, known as a **statement**:
+
+```{css}
+
+#selector {
+  property: value;
+}
+
+```
+
+- ### Fourth, following `property:`, a `value` is declared, immediately followed by a semi-colon `;`
+
+--
+
+- ### This completes the **statement** syntax.  Note that statements can exist inside statements as long as the integrity of the *outer* curly brackets remains intact.
+
+---
+
+background-size: cover
+class: left ,top
+# CartoCSS: Syntax
+
+
+.footnote[[source](https://www.decoist.com/unique-bookends/metal-bracket-bookends/)]
+
+
+- ### Note that properties will often be *coded colors*, *strings*, *numbers* and boolean *true/false*. Like books inside bookends, the declared properties and values are always *inside* the curly brackets.
+
+
+.center[<img src="img/Metal-bracket-bookends.png" width= 45%/>]
+
+---
+
+background-size: cover
+class: left ,top
+# CartoCSS: Syntax
+
+
+.footnote[[source](https://carto.com/)]
+
+
+- ### Here is an example of a relatively simple statement for global points represented populated places from [Natural Earth](https://www.naturalearthdata.com/http//www.naturalearthdata.com/download/110m/cultural/ne_110m_populated_places_simple.zip):
+
+
+.center[<img src="img/cartocss-example1.png" width= 80%/>]
+
+---
+
+background-size: cover
+class: left ,top
+# CartoCSS: Syntax
+
+
+.footnote[[source](https://www.w3schools.com/css/css_syntax.asp)]
+
+
+- ### Although CartoCSS and CSS are different in both syntax and purpose, in the following example of a CSS statement, congruency of the two is evident:
+
+```{css}
+
+p {
+  color: red;
+  text-align: center;
+} 
+
+```
+
+.center[<img src="img/cartocss-example2.png" width= 80%/>]
+
+
+
+
+---
+
+class: left ,top, inverse
+# Lecture 2 End
